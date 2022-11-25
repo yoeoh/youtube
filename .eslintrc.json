@@ -7,12 +7,11 @@
       "eslint:recommended",
       "plugin:react/recommended",
       "plugin:react/jsx-runtime",
-      "plugin:@typescript-eslint/recommended",
       "prettier"
   ],
   "overrides": [
   ],
-  "parser": "@typescript-eslint/parser",
+  "parser": "@babel/eslint-parser",
   "parserOptions": {
       "ecmaFeatures": {
         "jsx": true
@@ -23,13 +22,14 @@
   "plugins": [
       "react",
       "react-hooks",
-      "@typescript-eslint",
       "prettier"
   ],
   "rules": {
       "quotes": ["error", "single"],
       "semi": ["error", "always"],
       "no-duplicate-imports": "error",
-      "camelcase": "error"
+      "no-unused-vars": "warn",
+      "camelcase": "error",
+      "react/prop-types": [0, { "skipUndeclared": true }]
   }
 }
