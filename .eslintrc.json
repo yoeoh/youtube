@@ -11,7 +11,7 @@
   ],
   "overrides": [
   ],
-  "parser": "@babel/eslint-parser",
+  "parser": "espree",
   "parserOptions": {
       "ecmaFeatures": {
         "jsx": true
@@ -30,6 +30,7 @@
       "no-duplicate-imports": "error",
       "no-unused-vars": "warn",
       "camelcase": "error",
-      "react/prop-types": [0, { "skipUndeclared": true }]
+      "react/prop-types": [0, { "skipUndeclared": true }],
+      "requireConfigFile": 0
   }
 }
