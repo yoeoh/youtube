@@ -1,11 +1,11 @@
 import axios from 'axios';
 
 const BASE_URL = 'https://youtube-v31.p.rapidapi.com';
+const MAX_RESULTS = '50';
 
 const options = {
-  url: BASE_URL,
   params: {
-    maxResults: '50',
+    maxResults: MAX_RESULTS,
   },
   headers: {
     'X-RapidAPI-Key': process.env.REACT_APP_RAPID_API_KEY,
@@ -13,7 +13,10 @@ const options = {
   },
 };
 
-export const fetchFromApi = async (url) => {
-  const { data } = await axios.get(`${BASE_URL}/${url}`, options);
+export const fetchFromApi = async (endpoint, customOptions) => {
+  const { data } = await axios.get(`${BASE_URL}/${endpoint}`, {
+    headers: { ...options.headers, ...customOptions.headers },
+    params: { ...options.params, ...customOptions.params },
+  });
   return data;
 };

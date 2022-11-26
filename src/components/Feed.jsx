@@ -10,7 +10,11 @@ const Feed = () => {
 
   useEffect(() => {
     setVideos([]);
-    fetchFromApi(`search?part=snippet&q=${selectedCategory}`).then((data) => setVideos(data.items));
+
+    const fetchEndpoint = 'search';
+    const fetchOptions = { params: { part: 'snippet', q: selectedCategory } };
+
+    fetchFromApi(fetchEndpoint, fetchOptions).then((data) => setVideos(data.items));
   }, [selectedCategory]);
 
   return (
