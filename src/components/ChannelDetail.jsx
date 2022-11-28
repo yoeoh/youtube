@@ -30,9 +30,14 @@ const ChannelDetail = () => {
         <div
           style={{
             background: 'linear-gradient(343deg, rgba(158,0,139,1) 0%, rgba(68,0,128,1) 100%)',
+            zIndex: 10,
+            height: '200px',
           }}
         />
-        <ChannelCard channelDetail={channelDetail} />
+        <ChannelCard channelDetail={channelDetail} marginTop='-93px' />
+      </Box>
+      <Box sx={{ margin: '0 auto', width: '90vw' }}>
+        <Videos videos={videos} />
       </Box>
     </Box>
   );
